@@ -212,6 +212,14 @@ function App() {
 
   return (
     <div className="app">
+      {/* Rotating Banner */}
+      <div className="rotating-banner">
+        <div className="banner-content">
+        <span>To enable activity tracking, join our Discord community </span>
+        <a href="https://discord.gg/68ErCT56UV" target="_blank" rel="noopener noreferrer" className="banner-link">here</a>
+        </div>
+      </div>
+
       {/* Header */}
       <header className="header">
         <div className="header-content">
