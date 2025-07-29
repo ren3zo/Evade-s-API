@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Copy, ExternalLink, Edit } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHammer, faCrown, faBolt, faWrench, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faHammer, faCrown, faBolt, faWrench } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { EvadeData, Activity } from './types/evade';
 import { fetchEvadeData, fetchGuildInfo, getAvatarUrl, getStatusText, getStatusClass } from './services/evadeApi';
@@ -133,27 +133,6 @@ function App() {
       default:
         return false;
     }
-  };
-
-  const getCurrentActivities = () => {
-    if (!userData || !userData.activities || userData.activities.length === 0) {
-      return 'No current activities';
-    }
-    
-    return userData.activities
-      .map(activity => activity.name)
-      .join(', ');
-  };
-
-  const getActivityWithImage = () => {
-    if (!userData || !userData.activities || userData.activities.length === 0) {
-      return null;
-    }
-    
-    // Find the first activity with an image
-    return userData.activities.find(activity => 
-      activity.assets && (activity.assets.large_image || activity.assets.small_image)
-    );
   };
 
   const getActivityImageUrl = (activity: Activity) => {
